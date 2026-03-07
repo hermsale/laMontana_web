@@ -1,0 +1,16 @@
+/* Botones Google dentro del sidebar (mock) */
+.sidebar #login-google,
+.sidebar #register-google {
+  background: var(--orange);
+  color: #fff;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, .06);
+}
+.sidebar #login-google:hover,
+.sidebar #register-google:hover {
+  background: var(--orange-dark);
+}
+.sidebar #login-google svg,
+.sidebar #register-google svg {
+  stroke: currentColor;
+}

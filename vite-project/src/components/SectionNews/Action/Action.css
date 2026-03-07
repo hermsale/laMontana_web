@@ -1,0 +1,11 @@
+/* ============================================================================
+   Estilos modulares para Action (contenedor de acciones)
+   Ubicación: src/components/SectionNews/Action/Action.css
+   Basado en tu css.txt original para .news-actions
+   *No redefine .btn ni .btn.small (viven en nivel global/SectionNews)
+============================================================================ */
+
+.news-actions {
+  text-align: center;
+  margin-top: 12px;
+}

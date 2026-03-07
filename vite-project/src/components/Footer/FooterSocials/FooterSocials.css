@@ -1,0 +1,45 @@
+/* =============================================================================
+   ESTILOS: FooterSocials.css
+   UBICACIÓN: src/components/Footer/FooterSocials/FooterSocials.css
+   -----------------------------------------------------------------------------
+   ¿Qué estiliza?
+     - SOLO la barra de redes ubicada en el footer:
+       • Contenedor de iconos (flex centrado)
+       • Botones/links de cada red (estados hover)
+   Notas:
+     - El posicionamiento final en la grilla del footer se define en Footer.css
+       mediante el área `footer-socials`.
+============================================================================= */
+
+/* Contenedor de iconos (centrado y con separación uniforme) */
+.footer-socials.socials {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+/* Botones/iconos: caja cuadrada con borde y fondo sutil sobre fondo oscuro */
+.footer-socials.socials a {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+
+  transition: transform 0.08s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover: realce sutil con leve elevación */
+.footer-socials.socials a:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}

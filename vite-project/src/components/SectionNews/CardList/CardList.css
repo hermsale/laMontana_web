@@ -1,0 +1,23 @@
+/* ============================================================================
+   Estilos modulares para CardList (lista de noticias/promos)
+   Ubicación: src/components/SectionNews/CardList/CardList.css
+   Basado en tu css.txt original (.news-list)
+============================================================================ */
+
+.news-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+/* Estado vacío simple  */
+.news-empty {
+  background: #fff;
+  border: 1px solid rgba(155, 64, 16, 0.06);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 600;
+}

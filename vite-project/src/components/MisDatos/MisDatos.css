@@ -1,0 +1,148 @@
+/* ============================================================================
+   Archivo: MisDatos.css
+   Contexto: Estilos de la vista "Mis datos".
+   Alcance: Layout centrado, tarjetas de formulario y feedback de validación.
+============================================================================ */
+.misdatos {
+  max-width: 840px;
+  margin: 32px auto 80px;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.misdatos h1 {
+  color: var(--brown-900);
+  margin: 0 0 8px;
+}
+
+.misdatos__subtitle {
+  color: #4b3427;
+  margin: 0 auto 18px;
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+.misdatos__form {
+  background: #fffaf4;
+  border: 1px solid rgba(53, 32, 23, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  padding: 18px;
+  display: grid;
+  gap: 16px;
+  text-align: left;
+}
+
+.misdatos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.misdatos__card {
+  background: rgba(59, 36, 24, 0.04);
+  border: 1px solid rgba(59, 36, 24, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.misdatos__card h2 {
+  margin: 0;
+  color: var(--brown-900);
+}
+
+.misdatos__card p {
+  margin: 0;
+  color: #5c4334;
+}
+
+.misdatos__field {
+  display: grid;
+  gap: 6px;
+  color: #3b2418;
+  font-weight: 700;
+}
+
+.misdatos__field span {
+  font-size: 14px;
+}
+
+.misdatos__field input {
+  border: 1px solid rgba(53, 32, 23, 0.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: inherit;
+  background: #272727;
+}
+
+.misdatos__field.full {
+  grid-column: 1 / -1;
+}
+
+.misdatos__hint {
+  color: #7a5b48;
+  margin: 0;
+  font-weight: 500;
+}
+
+.misdatos__error {
+  color: #b23a1f;
+  font-weight: 600;
+}
+
+.misdatos__alert {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  text-align: center;
+  font-weight: 700;
+}
+
+.misdatos__alert.error {
+  background: rgba(201, 93, 31, 0.12);
+  color: #8b3b12;
+  border-color: rgba(201, 93, 31, 0.2);
+}
+
+.misdatos__alert.ok {
+  background: rgba(16, 185, 129, 0.12);
+  color: #0b8f62;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.misdatos__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-primary {
+  border-radius: 10px;
+  padding: 12px 16px;
+  border: 1px solid rgba(225, 124, 54, 0.6);
+  background: linear-gradient(120deg, #e17c36, #c95d1f);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.misdatos__hint,
+.misdatos__error {
+  font-size: 13px;
+}
+
+.misdatos__hint:last-child {
+  margin-bottom: 4px;
+}
+
+.misdatos__hint.spacer {
+  visibility: hidden;
+  display: block;
+}
+
+.misdatos__hint,
+.misdatos__subtitle {
+  line-height: 1.5;
+}

@@ -1,0 +1,119 @@
+/* ============================================================================
+   Estilos modulares para Filters (extraídos de tu css.txt original)
+   Ubicación: src/components/SectionNews/Filters/Filters.css
+============================================================================ */
+
+/* Fila de chips (Recientes / Todas / Categorías) */
+.chips-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+/* Chip base */
+.chip {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(250, 160, 20, .08);
+  border: 1px solid rgba(155, 64, 16, .08);
+  font-weight: 600;
+  color: var(--brown-700);
+}
+
+/* Chip activo (seleccionado) */
+.chip.active {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange-dark);
+}
+
+/* Contenedor del dropdown */
+.dropdown {
+  position: relative;
+}
+
+/* Menú flotante de categorías */
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: #fff;
+  color: #222;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+  padding: 6px;
+  z-index: 5;
+}
+
+/* Opción de categoría */
+.cat-item {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Estado seleccionado (usa aria-checked="true") */
+.cat-item[aria-checked="true"] {
+  background: rgba(0, 0, 0, .06);
+}
+
+/* Hover para mejor feedback */
+.cat-item:hover {
+  background: rgba(0, 0, 0, .08);
+}
+
+/* Responsivo menor (opcional si querés que el menú se adapte mejor en mobile) */
+/* @media (max-width: 480px) {
+  .dropdown-menu {
+    left: 0;
+    transform: none;
+    min-width: 180px;
+  }
+} */
+/* =========================================================
+   Forzar color legible en el menú de categorías (dropdown)
+   Evita herencia de color blanco desde contenedores padres.
+   ========================================================= */
+
+/* Color base del menú y su contenido */
+.chips-row .dropdown .dropdown-menu {
+  background: #fff;
+  color: #222;              /* texto general oscuro */
+  z-index: 10;              /* por si queda detrás de otros elementos */
+}
+
+/* Ítems: color de texto por defecto */
+.chips-row .dropdown .dropdown-menu .cat-item {
+  color: #222;              /* texto normal */
+}
+
+/* Ítem seleccionado (usa aria-checked="true") */
+.chips-row .dropdown .dropdown-menu .cat-item[aria-checked="true"] {
+  background: rgba(0, 0, 0, .06);
+  color: #222;              /* mantener legible en fondo gris claro */
+  font-weight: 700;
+}
+
+/* Hover: mantener contraste alto */
+.chips-row .dropdown .dropdown-menu .cat-item:hover {
+  background: rgba(0, 0, 0, .08);
+  color: #222;
+}
+
+/* Si tenés íconos/SVG en el menú, que no hereden blanco */
+.chips-row .dropdown .dropdown-menu svg {
+  color: #222;
+  stroke: currentColor;
+  opacity: 0.9;
+}

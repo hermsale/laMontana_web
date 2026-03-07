@@ -1,0 +1,165 @@
+/* ============================================================================
+   Archivo: SectionCatalog.css
+   Contexto: Estilos del catálogo de la landing (filtros, grid, mini-cart, avisos).
+   Alcance: Define layout general, botones, y avisos de autenticación/servicios.
+============================================================================ */
+.catalogo {
+  margin-top: 72px;
+  position: relative;
+  padding-bottom: 120px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.catalogo-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.catalogo-header h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  color: var(--brown-900);
+  margin: 0 0 6px;
+}
+
+.catalogo-sub {
+  max-width: 720px;
+  margin: 0 auto 18px;
+  color: #4b3427;
+}
+
+.catalogo-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.btn-catalogo {
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: var(--orange);
+  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.btn-catalogo:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 960px) {
+  .catalogo {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.catalogo-auth {
+  position: fixed;
+  margin: 0;
+  padding: 16px 18px 18px;
+  border-radius: 14px;
+  background: linear-gradient(120deg, #3b2418, #4b2e1e);
+  color: #f5ecdf;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+  display: grid;
+  gap: 10px;
+  min-width: min(90vw, 360px);
+  max-width: 420px;
+  z-index: 1500;
+}
+
+.catalogo-auth__text {
+  display: grid;
+  gap: 4px;
+  text-align: center;
+}
+
+.catalogo-auth__title {
+  font-weight: 800;
+  margin: 0;
+  color: #ffe0c7;
+}
+
+.catalogo-auth__desc {
+  margin: 0;
+  color: rgba(245, 236, 223, 0.85);
+  line-height: 1.4;
+}
+
+.catalogo-auth__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-auth {
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+.btn-auth.primario {
+  background: linear-gradient(120deg, #e17c36, #c95d1f);
+  color: #fff7ed;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14);
+}
+
+.btn-auth.secundario {
+  background: linear-gradient(120deg, #e17c36, #c95d1f);
+  color: #fff7ed;
+  border-color: rgba(225, 124, 54, 0.6);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.14);
+}
+
+.btn-auth:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.16);
+}
+
+.btn-auth:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.catalogo-auth__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: 0;
+  color: #ffe0c7;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .catalogo-auth {
+    padding-right: 44px;
+  }
+
+  .catalogo-auth__actions {
+    justify-content: center;
+  }
+}
+
+.catalogo-servicio-hint {
+  text-align: center;
+  color: #3b2418;
+  background: rgba(225, 124, 54, 0.08);
+  border: 1px solid rgba(225, 124, 54, 0.2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin: 10px auto;
+  max-width: 760px;
+}

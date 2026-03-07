@@ -1,0 +1,15 @@
+.tab {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #fff;
+  color: var(--brown-700);
+  border-color: #fff;
+}

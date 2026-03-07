@@ -1,0 +1,63 @@
+/* ============================================================================
+   Archivo: SectionHero.css
+   Contexto: Estilos de la sección Hero de la landing.
+   Alcance: Tipografías, espaciados y responsivo para títulos, lead y CTA.
+============================================================================ */
+
+/* --- Contenedor principal del hero --- */
+.hero {
+  text-align: center;
+  padding: 48px 18px 56px;
+}
+
+/* --- Título principal (h2) --- */
+.hero h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  margin: 6px 0 0;
+  color: var(--brown-900);
+}
+
+/* --- Subtítulo (h3) --- */
+.hero h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  margin: 6px 0;
+  color: var(--brown-700);
+}
+
+/* --- Texto descriptivo (lead) --- */
+.hero p.lead {
+  max-width: 760px;
+  margin: 14px auto 22px;
+  color: #4b4b4b;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* --- Contenedor de acciones (botón principal u otros) --- */
+.hero .cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* ============================================================================
+   Responsive (mobile-first)
+   - Reduce tamaños de tipografía y padding general en pantallas pequeñas.
+============================================================================ */
+@media (max-width: 720px) {
+  .hero {
+    padding: 28px 18px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .hero h3 {
+    font-size: 20px;
+  }
+}

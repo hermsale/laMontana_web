@@ -1,0 +1,98 @@
+.imp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.imp-form h3 {
+  margin: 0 0 6px;
+}
+
+.imp-dropzone {
+  border: 2px dashed rgba(199, 106, 29, 0.35);
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  background: #fafafa;
+  position: relative;
+}
+
+.imp-dropzone.over {
+  border-color: var(--orange);
+  background: #fff3e0;
+}
+
+.imp-dropzone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.btn-outline {
+  margin-top: 8px;
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 140px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #1e1e1e;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  position: relative;
+  z-index: 1;
+}
+
+.imp-file {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.imp-field input,
+.imp-field select,
+.imp-field textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d8d8d8;
+  background: #f7f7f7;
+  color: #1e1e1e;
+}
+
+.imp-field small {
+  color: var(--muted);
+}
+
+.imp-options {
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fbfbfb;
+}
+
+.imp-radio-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.imp-check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.imp-hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.imp-carillas {
+  max-width: 90px;
+}

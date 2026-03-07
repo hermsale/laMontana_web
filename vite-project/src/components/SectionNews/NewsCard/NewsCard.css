@@ -1,0 +1,99 @@
+/* ============================================================================
+   Estilos modulares para NewsCard
+   Ubicación: src/components/SectionNews/NewsCard/NewsCard.css
+   Basado directamente en tu css.txt original (.news-card y .badge-new)
+   + Se agregan clases auxiliares (.news-header, .news-title, .news-date, .news-desc)
+============================================================================ */
+
+/* Tarjeta base */
+.news-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid rgba(155, 64, 16, 0.06);
+  box-shadow: 0 4px 10px rgba(18, 18, 18, 0.02);
+}
+
+/* Fila superior (título + insignia) */
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Título de la noticia */
+.news-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Insignia "Nuevo" */
+.badge-new {
+  background: var(--orange);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* Fecha (ícono + texto) */
+.news-date {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.news-date svg {
+  opacity: 0.9;
+}
+
+/* Descripción / contenido */
+.news-desc {
+  margin-top: 12px;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.45;
+}
+/* Título negro explícito */
+.news-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #222; /* <- refuerzo */
+}
+
+/* Descripción en gris */
+.news-desc {
+  margin-top: 12px;
+  color: #444; /* <- refuerzo */
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* Meta (fecha) ya va en muted */
+.news-date {
+  color: var(--muted);
+}
+
+.news-detail-btn {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #d2d2d2;
+  background: #fff;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.news-detail-btn:hover {
+  border-color: #b15c14;
+  color: #b15c14;
+}
+

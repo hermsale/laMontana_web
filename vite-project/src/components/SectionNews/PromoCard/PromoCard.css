@@ -1,0 +1,69 @@
+/* ============================================================================
+   Estilos originales para las tarjetas de promoción
+   Ubicación modular: src/components/SectionNews/PromoCard/PromoCard.css
+   Fuente: sección ".promo" del antiguo css.txt
+   Propósito: mantener diseño visual idéntico al HTML original.
+============================================================================ */
+
+.promo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fff9e6, #fff4d8);
+  border: 1px solid rgba(155, 64, 16, .08);
+}
+
+.promo .left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.promo .cta-mini {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--brown-700);
+  color: #fff;
+  font-weight: 700;
+}
+
+.promo-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.promo-note {
+  font-size: 13px;
+  color: #2f9d4d;
+  text-align: right;
+  font-weight: 700;
+  margin-top: 4px;
+}
+/* Título fuerte negro */
+.promo .left > div:nth-child(2),
+.promo-headline {
+  color: #222; /* por si usás la clase promo-headline */
+}
+
+/* Bajada/descripcion gris */
+.promo .left > div:nth-child(3),
+.promo-desc {
+  color: #4b4b4b; /* por si usás la clase promo-desc */
+}
+
+/* Claim/“rating” dorado tostado (como tu HTML) */
+.promo .left > div:nth-child(4),
+.promo-rating {
+  color: #b37b00;
+}
+
+/* Fecha (meta) en muted */
+.promo .left > div:nth-child(5),
+.promo-date {
+  color: var(--muted);
+}

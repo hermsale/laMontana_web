@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>La Montaña - Impresión Profesional</title>
+
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+
+    <!-- Top bar -->
+    <div class="topbar" role="region" aria-label="Información de contacto">
+      <div class="wrap">
+        <div class="left">
+          <div style="display:flex;align-items:center;gap:8px">
+            <!-- phone -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M3 5.5c0-.8.7-1.5 1.5-1.5h2.1c.7 0 1.3.5 1.5 1.2l.6 2.3c.2.9-.1 1.8-.8 2.4L6.4 11.7c1.6 3 4.3 5 7.5 5l2.4-.1c.7 0 1.3.5 1.5 1.2l.6 2.3c.2.9-.1 1.8-.8 2.4-.7.7-1.6 1-2.5.8C9.4 22.2 2.8 15.6 2.3 7.8 2.1 6.5 3 5.5 3 5.5z" />
+            </svg>
+            <span>+54 11 1234 5678</span>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px">
+            <!-- clock -->
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="9" stroke-width="1.6" />
+              <path d="M12 7v6l4 2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Lun-Vie 8:30-19:00</span>
+          </div>
+        </div>
+
+        <div class="right" aria-hidden="true">
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="wrap header-bar">
+        <div class="brand" aria-label="La Montaña">
+          <div class="logo">
+            <img src="image/icon.jpg" alt="icono" />
+          </div>
+          <div>
+            <h1>La Montaña</h1>
+            <p>Servicios de Impresión Profesional</p>
+          </div>
+        </div>
+
+        <!-- Chip de usuario logueado -->
+        <div id="user-chip" class="user-chip" hidden>
+          <span class="dot online" aria-label="Conectado" title="Conectado"></span>
+          <span id="user-chip-email">usuario@example.com</span>
+        </div>
+
+        <div class="header-actions">
+          <!-- boton de carrito  -->
+          <!-- Botón hamburguesa -->
+            <!-- <button class="hamburger" id="menu-cart" aria-expanded="false" aria-controls="cart-sidebar" aria-label="Abrir carrito">
+              🛒
+            </button> -->
+
+  
+          <!--Menu hamburguesa usuario-->
+          <button class="hamburger" id="menu-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Abrir menú">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white">
+              <path d="M3 6h18M3 12h18M3 18h18" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Overlay para cerrar al click  -->
+        <div id="overlay" class="overlay" hidden></div>
+
+        <!-- Menú lateral  -->
+        <aside id="sidebar" class="sidebar" role="dialog" aria-modal="true" aria-labelledby="sidebar-title" aria-hidden="true">
+          <div class="sidebar-header">
+            <h2 id="sidebar-title">Tu cuenta</h2>
+            <button id="sidebar-close" class="sidebar-close" aria-label="Cerrar menú">&times;</button>
+          </div>
+
+    
+
+          <!-- Tabs -->
+          <div class="tabs" role="tablist" aria-label="Autenticación">
+            <button class="tab active" role="tab" aria-selected="true" data-tab="login" id="tab-login">Iniciar sesión</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="register" id="tab-register">Crear cuenta</button>
+          </div>
+
+          <!-- Panel: Login -->
+          <form id="form-login" class="panel active" role="tabpanel" aria-labelledby="tab-login">
+            <label for="login-email">Correo</label>
+            <input type="email" id="login-email" name="email" required autocomplete="email" />
+
+            <label for="login-password">Contraseña</label>
+            <input type="password" id="login-password" name="password" required autocomplete="current-password" />
+
+            <button type="submit" class="btn full">Ingresar</button>
+
+            <div class="or">o</div>
+
+            <button type="button" id="login-google" class="btn outline full">
+              <span style="display:inline-flex;gap:8px;align-items:center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4" />
+                </svg>
+                Ingresar con Google
+              </span>
+            </button>
+          </form>
+
+          <!-- Panel: Registro -->
+          <form id="form-register" class="panel" role="tabpanel" aria-labelledby="tab-register" hidden>
+            <label for="reg-name">Nombre</label>
+            <input type="text" id="reg-name" name="name" required autocomplete="name" />
+
+            <label for="reg-email">Correo</label>
+            <input type="email" id="reg-email" name="email" required autocomplete="email" />
+
+            <label for="reg-password">Contraseña</label>
+            <input type="password" id="reg-password" name="password" required autocomplete="new-password" />
+
+            <button type="submit" class="btn full">Crear cuenta</button>
+
+            <div class="or">o</div>
+
+            <button type="button" id="register-google" class="btn outline full">
+              <span style="display:inline-flex;gap:8px;align-items:center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4" />
+                </svg>
+                Registrarme con Google
+              </span>
+            </button>
+          </form>
+
+          <!-- Menú visible solo si hay sesión -->
+          <nav id="auth-menu" class="panel" role="menu" hidden>
+            <a href="#" class="menu-item" role="menuitem">Dashboard personal</a>
+            <a href="#" class="menu-item" role="menuitem">Encargar pedido nuevo</a>
+            <a href="#" class="menu-item" role="menuitem">Pagos y facturas</a>
+            <a href="#" class="menu-item" role="menuitem">Mis Datos</a>
+            <a href="#" class="menu-item" role="menuitem">Inicio</a>
+            <hr class="sep" />
+            <button id="logout-btn" class="logout-btn" role="menuitem">Cerrar sesión</button>
+          </nav>
+
+        </aside>
+      </div>
+
+      
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+      
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <h2 id="hero-title">Impresión<br /><strong>Profesional</strong></h2>
+        <h3>Al alcance de un clic</h3>
+        <p class="lead">
+          Sube tu archivo, elige tus opciones y recibe tu trabajo impreso con la mejor calidad. Más de 1000 clientes satisfechos con nuestros servicios.
+        </p>
+
+        
+       
+
+        <div class="cta" role="group" aria-label="Acciones principales">
+          <a class="btn" href="#productos">
+            <svg width="30" height="30" viewBox="0 0 48 48" id="a" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <style>.b{fill:#000000;}.c{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1px;}</style>
+              </defs>
+              <path class="c" d="M14.5171,35.415H6.4026c-.4985,0-.9026-.4041-.9026-.9026v-13.504c0-.4985,.4041-.9026,.9026-.9026H41.5974c.4985,0,.9026,.4041,.9026,.9026v13.504c0,.4985-.4041,.9026-.9026,.9026h-8.1144" />
+              <rect class="c" x="14.5171" y="31.4366" width="18.9659" height="10.13" />
+              <path class="c" d="M33.4829,20.1056H14.5171V6.4334h14.9659l4,4v9.6723Z" />
+              <polyline class="c" points="29.8724 6.4334 29.8724 10.0439 33.4829 10.0439" />
+              <circle class="b" cx="39.8515" cy="22.8983" r=".75" />
+              <circle class="b" cx="36.8351" cy="22.8983" r=".75" />
+              <circle class="b" cx="33.8187" cy="22.8983" r=".75" />
+            </svg>
+            Comenzar a imprimir
+          </a>
+        </div>
+
+        <div class="icons-row" role="list">
+          <div class="feature" role="listitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="9" stroke-width="1.6" />
+              <path d="M12 6v6l3 3" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+            <div>Entrega rápida</div>
+          </div>
+
+          <div class="feature" role="listitem">
+            <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.5 12.4L10.9286 14L14.5 10" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M3 10.4167C3 7.21907 3 5.62028 3.37752 5.08241C3.75503 4.54454 5.25832 4.02996 8.26491 3.00079L8.83772 2.80472C10.405 2.26824 11.1886 2 12 2C12.8114 2 13.595 2.26824 15.1623 2.80472L15.7351 3.00079C18.7417 4.02996 20.245 4.54454 20.6225 5.08241C21 5.62028 21 7.21907 21 10.4167C21 10.8996 21 11.4234 21 11.9914C21 14.4963 20.1632 16.4284 19 17.9041M3.19284 14C4.05026 18.2984 7.57641 20.5129 9.89856 21.5273C10.62 21.8424 10.9807 22 12 22C13.0193 22 13.38 21.8424 14.1014 21.5273C14.6796 21.2747 15.3324 20.9478 16 20.5328" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <div>Calidad Garantizada</div>
+          </div>
+
+          <div class="feature" role="listitem">
+            <svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <g id="Delivery_Truck" data-name="Delivery Truck">
+                <g>
+                  <path d="M21.47,11.185l-1.03-1.43a2.5,2.5,0,0,0-2.03-1.05H14.03V6.565a2.5,2.5,0,0,0-2.5-2.5H4.56a2.507,2.507,0,0,0-2.5,2.5v9.94a1.5,1.5,0,0,0,1.5,1.5H4.78a2.242,2.242,0,0,0,4.44,0h5.56a2.242,2.242,0,0,0,4.44,0h1.22a1.5,1.5,0,0,0,1.5-1.5v-3.87A2.508,2.508,0,0,0,21.47,11.185ZM7,18.935a1.25,1.25,0,1,1,1.25-1.25A1.25,1.25,0,0,1,7,18.935Zm6.03-1.93H9.15a2.257,2.257,0,0,0-4.3,0H3.56a.5.5,0,0,1-.5-.5V6.565a1.5,1.5,0,0,1,1.5-1.5h6.97a1.5,1.5,0,0,1,1.5,1.5ZM17,18.935a1.25,1.25,0,1,1,1.25-1.25A1.25,1.25,0,0,1,17,18.935Zm3.94-2.43a.5.5,0,0,1-.5.5H19.15a2.257,2.257,0,0,0-4.3,0h-.82v-7.3h4.38a1.516,1.516,0,0,1,1.22.63l1.03,1.43a1.527,1.527,0,0,1,.28.87Z" />
+                  <path d="M18.029,12.205h-2a.5.5,0,0,1,0-1h2a.5.5,0,0,1,0,1Z" />
+                </g>
+              </g>
+            </svg>
+            <div>Envíos a Domicilio</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cart">
+          <!-- Panel: Carrito -->
+          <div id="cart-panel" class="cart-panel">
+                <h3 class="cart-title">🛒 Tu carrito</h3>
+                <div id="cart-items" class="cart-items">
+                    <!-- aca van los productos / cantidad / precio  -->
+                </div>
+                <!-- aca muestro el total -->
+                <div class="cart-subtotal"></div>
+                <button id="cart-clear" class="btn outline full">Vaciar carrito</button>           
+          </div>
+      </section>
+
+      <!-- Noticias -->
+      <section aria-labelledby="noticias" class="wrap">
+        <h2 id="noticias" class="section-title">Noticias, Descuentos y Novedades</h2>
+
+        <!-- Filtros: Recientes / Todas + Categorías -->
+        <div class="chips-row">
+          <button id="btn-news-recientes" class="chip active">Recientes</button>
+          <button id="btn-news-todas" class="chip">Todas</button>
+
+          <div class="dropdown">
+            <button id="btn-news-categorias" class="chip" aria-haspopup="true" aria-expanded="false">Categorías ▾</button>
+            <div id="cat-menu" class="dropdown-menu" role="menu" hidden>
+              <button class="cat-item" role="menuitemradio" data-cat="todas" aria-checked="true">Todas</button>
+              <button class="cat-item" role="menuitemradio" data-cat="fotocopias">Fotocopias</button>
+              <button class="cat-item" role="menuitemradio" data-cat="encuadernados">Encuadernados</button>
+              <button class="cat-item" role="menuitemradio" data-cat="anillados">Anillados</button>
+              <button class="cat-item" role="menuitemradio" data-cat="envios">Envíos</button>
+              <button class="cat-item" role="menuitemradio" data-cat="copias a color">Copias a color</button>
+              <button class="cat-item" role="menuitemradio" data-cat="varias">Varias</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="news-box">
+          <div class="news-list">
+            <!-- Promo 1 -->
+            <div class="promo" role="article" aria-label="Oferta especial" data-discount="20" data-cats="varias">
+              <div class="left">
+                <div style="display:flex;align-items:center;gap:8px;font-weight:700">⚡ Oferta Especial</div>
+                <div style="font-weight:800;font-size:18px;margin-top:4px">¡20% de descuento en tu primer pedido!</div>
+                <div style="color:#4b4b4b;margin-top:6px">Válido para nuevos clientes en servicios de impresión</div>
+                <div style="margin-top:6px;color:#b37b00">★★★★★ &nbsp; +1000 clientes satisfechos</div>
+                <div style="color:var(--muted);font-size:13px;margin-top:8px;display:flex;gap:8px;align-items:center">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M8 7h8v8H8z" stroke-width="1.4" />
+                  </svg>
+                  <time datetime="2025-01-23">23 de enero de 2025</time>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+                <a class="cta-mini" href="#descuento">Obtener Descuento</a>
+                <div style="font-size:12px;color:#6b6b6b">Oferta válida por tiempo limitado</div>
+              </div>
+            </div>
+
+            <!-- Promo 2 -->
+            <div class="promo" role="article" aria-label="Copias a color 30% OFF" data-discount="30" data-cats="copias a color">
+              <div class="left">
+                <div style="display:flex;align-items:center;gap:8px;font-weight:700">🎉 ¡Super Promo!</div>
+                <div style="font-weight:800;font-size:18px;margin-top:4px">30% OFF en Copias a Color</div>
+                <div style="color:#4b4b4b;margin-top:6px">Aplica en tiradas desde 50 copias</div>
+                <div style="margin-top:6px;color:#b37b00">★★★★★ &nbsp; Calidad fotográfica</div>
+                <div style="color:var(--muted);font-size:13px;margin-top:8px;display:flex;gap:8px;align-items:center">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M8 7h8v8H8z" stroke-width="1.4" />
+                  </svg>
+                  <time datetime="2025-01-21">21 de enero de 2025</time>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+                <a class="cta-mini" href="#descuento-color">Aprovechar</a>
+                <div style="font-size:12px;color:#6b6b6b">Válido todo el mes</div>
+              </div>
+            </div>
+
+            <!-- Noticia 1 -->
+            <article class="news-card" aria-labelledby="n1" data-cats="encuadernados">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <h3 id="n1" style="margin:0;font-size:16px">Nuevos Servicios de Encuadernación Premium</h3>
+                <span class="badge-new">Nuevo</span>
+              </div>
+              <div style="color:var(--muted);font-size:13px;margin-top:8px;display:flex;gap:8px;align-items:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M8 7h8v8H8z" stroke-width="1.4" />
+                </svg>
+                <time datetime="2025-01-14">14 de enero de 2025</time>
+              </div>
+              <p style="margin-top:12px;color:#444">Ahora ofrecemos encuadernación con tapa dura y acabados especiales para tus proyectos más importantes.</p>
+            </article>
+
+            <!-- Noticia 2 (con descuento declarado) -->
+            <article class="news-card" aria-labelledby="n2" data-cats="copias a color" data-discount="25">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <h3 id="n2" style="margin:0;font-size:16px">Descuentos en Impresión a Color</h3>
+                <span class="badge-new">Nuevo</span>
+              </div>
+              <div style="color:var(--muted);font-size:13px;margin-top:8px;display:flex;gap:8px;align-items:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M8 7h8v8H8z" stroke-width="1.4" />
+                </svg>
+                <time datetime="2025-01-09">9 de enero de 2025</time>
+              </div>
+              <p style="margin-top:12px;color:#444">Aprovechá hasta <strong>25%</strong> de descuento en impresiones a color en todos los formatos.</p>
+            </article>
+
+            <!-- Noticia 3 -->
+            <article class="news-card" aria-labelledby="n3" data-cats="envios">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <h3 id="n3" style="margin:0;font-size:16px">Nuevo servicio de Envío Express</h3>
+                <span class="badge-new">Nuevo</span>
+              </div>
+              <div style="color:var(--muted);font-size:13px;margin-top:8px;display:flex;gap:8px;align-items:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M8 7h8v8H8z" stroke-width="1.4" />
+                </svg>
+                <time datetime="2025-01-18">18 de enero de 2025</time>
+              </div>
+              <p style="margin-top:12px;color:#444">Cobertura en CABA y GBA con entrega en el día para pedidos confirmados antes de las 12hs.</p>
+            </article>
+
+            <!-- Noticia 4 -->
+            <article class="news-card" aria-labelledby="n4" data-cats="fotocopias">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <h3 id="n4" style="margin:0;font-size:16px">Papel Reciclado Premium para Fotocopias</h3>
+                <span class="badge-new">Nuevo</span>
+              </div>
+              <div style="color:var(--muted);font-size:13px;margin-top:8px;display:flex;gap:8px;align-items:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M8 7h8v8H8z" stroke-width="1.4" />
+                </svg>
+                <time datetime="2025-01-16">16 de enero de 2025</time>
+              </div>
+              <p style="margin-top:12px;color:#444">Sumamos una línea eco-friendly con excelente opacidad y rendimiento.</p>
+            </article>
+
+            <!-- Promo 3 -->
+            <div class="promo" role="article" aria-label="Anillados 15% OFF" data-discount="15" data-cats="anillados">
+              <div class="left">
+                <div style="display:flex;align-items:center;gap:8px;font-weight:700">💡 Especial Anillados</div>
+                <div style="font-weight:800;font-size:18px;margin-top:4px">15% de descuento en anillados</div>
+                <div style="color:#4b4b4b;margin-top:6px">Ideal para apuntes universitarios y manuales</div>
+                <div style="margin-top:6px;color:#b37b00">★★★★☆ &nbsp; Muy solicitado</div>
+                <div style="color:var(--muted);font-size:13px;margin-top:8px;display:flex;gap:8px;align-items:center">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M8 7h8v8H8z" stroke-width="1.4" />
+                  </svg>
+                  <time datetime="2025-01-12">12 de enero de 2025</time>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+                <a class="cta-mini" href="#promo-anillados">Ver detalle</a>
+                <div style="font-size:12px;color:#6b6b6b">Hasta agotar stock</div>
+              </div>
+            </div>
+
+            <!-- Noticia 5 -->
+            <article class="news-card" aria-labelledby="n5" data-cats="varias">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <h3 id="n5" style="margin:0;font-size:16px">Ampliamos horario de atención</h3>
+              </div>
+              <div style="color:var(--muted);font-size:13px;margin-top:8px;display:flex;gap:8px;align-items:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M8 7h8v8H8z" stroke-width="1.4" />
+                </svg>
+                <time datetime="2025-01-07">7 de enero de 2025</time>
+              </div>
+              <p style="margin-top:12px;color:#444">Ahora abrimos de 8:30 a 19:00 hs para que tengas más tiempo de retirar tus pedidos.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- botón Mostrar más -->
+        <div class="news-actions">
+          <button id="btn-news-more" class="btn outline small">Mostrar más</button>
+        </div>
+      </section>
+
+      <!-- Productos -->
+      <section class="wrap" aria-labelledby="productos-title">
+        <h2 id="productos-title" class="section-title">Nuestros Productos y Servicios</h2>
+
+        <div class="filters" role="tablist" aria-label="Categorias"></div>
+
+        <!-- Contenedor con scroll interno y tamaño controlado -->
+        <div class="products-box" id="productos-box" data-page-size="3" aria-describedby="productos-status">
+          <div class="products-grid" id="productos" aria-live="polite">
+            <!-- acá van los productos y servicios -->
+          </div>
+        </div>
+
+        <p id="productos-status" class="visually-hidden" aria-live="polite">Mostrando productos…</p>
+
+        <div class="products-actions">
+          <button id="btn-productos-mas" class="btn-more" aria-controls="productos">Mostrar más</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="wrap footer-inner">
+
+        <!-- Columna contacto -->
+        <div class="footer-col footer-contact">
+          <h4>Contacto</h4>
+          <address>
+            <a class="contact-link" href="tel:+541112345678">+54 11 1234 5678</a><br />
+            <a class="contact-link" href="mailto:info@lamontana.com.ar">info@lamontana.com.ar</a>
+          </address>
+
+          <h4 class="spaced">Horarios</h4>
+          <p class="schedule">Lunes a Viernes<br />8:30 - 19:00 hs</p>
+        </div>
+
+        <!-- Columna marca (centrada) -->
+        <div class="footer-col footer-brand">
+          <a class="logo" href="/" aria-label="Inicio La Montaña">
+            <img src="image/icon.jpg" alt="Logo La Montaña" />
+          </a>
+          <h4>La Montaña</h4>
+          <div class="subtitle">Impresión Profesional</div>
+          <p class="about">Tu imprenta de confianza para todos tus proyectos. Calidad garantizada y servicio personalizado.</p>
+        </div>
+
+        <!-- Columna servicios -->
+        <div class="footer-col footer-services">
+          <h4>Servicios</h4>
+          <ul class="services">
+            <li>Impresión</li>
+            <li>Encuadernación</li>
+            <li>Anillado</li>
+            <li>Copias</li>
+          </ul>
+        </div>
+
+        <!-- Navegación de redes sociales (centrada y separada) -->
+        <nav class="socials footer-socials" aria-label="Redes sociales">
+          <a href="https://wa.me/5491112345678" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <!-- WhatsApp -->
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path fill="currentColor" d="M20.5 3.5A11 11 0 0 0 3.1 17.4L2 22l4.7-1.2A11 11 0 0 0 12 23a11 11 0 0 0 8.5-18.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-2.7.7.7-2.6-.2-.3A9 9 0 1 1 12 21zm5-6.2c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.8 0a7.7 7.7 0 0 1-2.3-1.4 8.6 8.6 0 0 1-1.6-2c-.2-.4 0-.6.2-.8l.5-.7c.2-.2.3-.4.4-.6.1-.3 0-.5 0-.7l-1-2c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.6c.2.3 2.4 3.7 5.8 5.2l2 .8c.8.3 1.5.3 2 .2.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3z" />
+            </svg>
+          </a>
+
+          <a href="https://instagram.com/lamontana" target="_blank" rel="noopener" aria-label="Instagram">
+            <!-- Instagram -->
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.7.7.7.4 1.3.9 1.8 1.8.4.7.7 1.5.7 2.7.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.7 2.7-.4.7-.9 1.3-1.8 1.8-.7.4-1.5.6-2.7.7-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.7-.7a4.7 4.7 0 0 1-1.8-1.8c-.4-.7-.6-1.5-.7-2.7C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .7-2.7.4-.7.9-1.3 1.8-1.8.7-.4 1.5-.6 2.7-.7C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1 0-1.6.2-2 .4-.5.2-.8.4-1.1.8-.4.3-.6.7-.8 1.1-.2.4-.4 1-.4 2-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 1 .2 1.6.4 2 .2.4.4.8.8 1.1.3.4.7.6 1.1.8.4.2 1 .4 2 .4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1 0 1.6-.2 2-.4.4-.2.8-.4 1.1-.8.4-.3.6-.7.8-1.1.2-.4.4-1 .4-2 .1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-1-.2-1.6-.4-2-.2-.4-.4-.8-.8-1.1-.3-.4-.7-.6-1.1-.8-.4-.2-1-.4-2-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.5a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13zm0 2a4.5 4.5 0 1 0 .01 9.01A4.5 4.5 0 0 0 12 9.5zm5.3-3a1.2 1.2 0 1 1 0 2.5 1.2 1.2 0 0 1 0-2.5z" />
+            </svg>
+          </a>
+
+          <a href="https://facebook.com/lamontana" target="_blank" rel="noopener" aria-label="Facebook">
+            <!-- Facebook -->
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.4V12h2.4V9.7c0-2.3 1.4-3.6 3.5-3.6 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.5.7-1.5 1.4V12h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12z" />
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <div class="footer-copy">© 2025 La Montaña Impresiones. Todos los derechos reservados.</div>
+    </footer>
+
+    <!-- Chat flotante WhatsApp -->
+    <a href="https://wa.me/5491112345678" target="_blank" rel="noopener" class="chat" title="Chateá con nosotros por WhatsApp" aria-label="Abrir chat de WhatsApp">
+      <!-- WhatsApp (Simple Icons) -->
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M.057 24l1.687-6.163A11.867 11.867 0 0 1 0 11.99C0 5.373 5.373 0 11.99 0S24 5.373 24 11.99 18.627 24 12.01 24a11.9 11.9 0 0 1-5.671-1.448L.057 24zm6.597-3.807c1.707.992 3.09 1.593 5.347 1.593 4.488 0 8.129-3.64 8.129-8.129 0-4.488-3.64-8.129-8.129-8.129-4.488 0-8.129 3.64-8.129 8.129 0 2.047.75 3.951 1.999 5.366l-.53 1.937 1.313-.737zm11.387-5.47c-.073-.121-.268-.195-.56-.342-.291-.146-1.727-.85-1.993-.947-.268-.098-.463-.146-.657.146-.195.292-.753.947-.923 1.142-.17.195-.341.22-.632.073-.292-.146-1.233-.454-2.35-1.446-.869-.774-1.456-1.73-1.627-2.022-.17-.292-.018-.45.128-.596.132-.131.292-.341.438-.512.146-.17.195-.292.292-.487.098-.195.049-.365-.024-.512-.073-.146-.657-1.589-.901-2.18-.237-.569-.478-.492-.657-.5l-.56-.01c-.195 0-.512.073-.78.365s-1.024 1.001-1.024 2.439 1.049 2.834 1.193 3.029c.146.195 2.065 3.157 5.004 4.429.701.302 1.249.483 1.676.619.703.224 1.342.192 1.848.117.563-.084 1.727-.706 1.971-1.389.243-.682.243-1.267.17-1.389z" />
+      </svg>
+    </a>
+
+    <script src="js/productos.api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/noticias.js"></script>
+    <script src="js/sidebar.js"></script>
+  </body>
+</html>

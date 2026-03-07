@@ -1,0 +1,69 @@
+.impresiones {
+  padding: 32px 0;
+}
+
+.impresiones__layout {
+  display: grid;
+  grid-template-columns: 0.4fr 1.6fr;
+  gap: 16px;
+}
+
+.impresiones__col {
+  background: #fff;
+  border: 1px solid rgba(199, 106, 29, 0.25);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 900px) {
+  .impresiones__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.impresiones__title {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.impresiones__intro {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.impresiones__summary {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.impresiones__summary > * {
+  max-width: 540px;
+  width: 100%;
+}
+
+.imp-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.imp-modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: min(420px, 90%);
+  border: 1px solid rgba(199, 106, 29, 0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.imp-modal__order {
+  font-weight: 700;
+  color: #b35400;
+}

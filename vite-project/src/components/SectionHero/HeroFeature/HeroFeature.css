@@ -1,0 +1,35 @@
+/* ============================================================================
+   COMPONENTE: HeroFeature
+   Descripción:
+     - Estilos del ítem individual de la fila de características.
+============================================================================ */
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
+/* Ícono del feature */
+.feature__icon {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  opacity: 0.95;
+  line-height: 0;
+}
+
+.feature__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Etiqueta de texto */
+.feature__label {
+  text-align: center;
+}

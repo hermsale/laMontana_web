@@ -1,0 +1,34 @@
+# Dependencias
+node_modules
+server/node_modules
+vite-project/node_modules
+server/database/*.db
+server/database/*.db-shm
+server/database/*.db-wal
+server/database/data/
+# Builds/outputs
+dist
+dist-ssr
+vite-project/dist
+
+# Entornos y claves
+.env
+server/.env
+*.env
+*.env.*
+server/.env
+server/.env.*
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Archivos sueltos
+plataformas de desarrollo 2.pdf
+
+.env
+firebase-service-account.json
+server/.env
+server/config/firebase-service-account.json

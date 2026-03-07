@@ -1,0 +1,57 @@
+/* ============================================================================
+   Archivo: Brand/brand.css
+   Contexto: Estilos del bloque de marca en el header (logo + textos).
+   Alcance: Layout y tamaño del logo, tipografía del título y subtítulo.
+============================================================================ */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-link {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.logo img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.10);
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+}
+
+.brand h1 {
+  margin: 0;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.brand p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #f0e4d6;
+  opacity: 0.95;
+}

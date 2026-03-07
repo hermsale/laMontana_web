@@ -1,0 +1,43 @@
+/* =============================================================================
+   ESTILOS: FooterContact.css
+   UBICACIÓN: src/components/Footer/FooterContact/FooterContact.css
+   -----------------------------------------------------------------------------
+   ¿Qué estiliza?
+     - SOLO la columna de "Contacto" del footer: <address>, enlaces y espaciados.
+     - Mantiene el look & feel original extraído del css legado.
+   Notas:
+     - No define el layout de columnas (eso va en Footer.css).
+     - Se prefiere el scope con `.footer-contact` para evitar fugas de estilos.
+============================================================================= */
+
+/* Bloque semántico de dirección: reseteo a estilo normal + legibilidad */
+.footer-contact address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+/* Separación del segundo título ("Horarios") respecto del bloque de enlaces */
+.footer-contact .spaced {
+  margin-top: 16px;
+}
+
+/* Enlaces de contacto (tel/mail): blancos, con subrayado punteado suave */
+.footer-contact .contact-link {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.35);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover: aclarar texto y ocultar el subrayado punteado */
+.footer-contact .contact-link:hover {
+  color: #ffe6c4;
+  border-bottom-color: transparent;
+}
+
+/* Texto de horarios (p.schedule) — no hay estilo heredado fuerte,
+   pero lo dejamos por si se quieren agregar ajustes más adelante */
+.footer-contact .schedule {
+  /* ejemplo: podrías ajustar color/opacidad si lo necesitás */
+  /* color: rgba(255, 255, 255, 0.92); */
+}

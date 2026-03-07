@@ -1,0 +1,44 @@
+/* =============================================================================
+   ESTILOS: FooterServices.css
+   UBICACIÓN: src/components/Footer/FooterServices/FooterServices.css
+   -----------------------------------------------------------------------------
+   ¿Qué estiliza?
+     - SOLO la columna de “Servicios” del footer:
+       • La lista <ul class="services"> y sus <li>
+     - Mantiene el look & feel original extraído del CSS legado.
+   Notas:
+     - No define el layout de columnas (eso va en Footer.css).
+     - Se usa el scope `.footer-services` para aislar estilos.
+============================================================================= */
+
+/* Lista de servicios como "chips" verticales */
+.footer-services .services {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center; /* Mobile-first centrado */
+}
+
+/* En desktop, alinear a la derecha  */
+@media (min-width: 960px) {
+  .footer-services .services {
+    align-items: flex-end;
+  }
+}
+
+/* Chip de servicio */
+.footer-services .services li {
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  /* Fondo y borde suaves sobre footer oscuro */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  font-weight: 600;
+  font-size: 14px;
+}

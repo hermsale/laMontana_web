@@ -1,0 +1,38 @@
+.imp-ship {
+  border: 1px solid rgba(199, 106, 29, 0.25);
+  border-radius: 12px;
+  padding: 14px;
+  background: #fff;
+  margin-top: 14px;
+}
+
+.imp-ship__hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.imp-ship__label.check {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.imp-ship__label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.imp-ship__label input,
+.imp-ship__label textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d8d8d8;
+  background: #f7f7f7;
+  color: #1e1e1e;
+}
+
+.imp-ship__label.check input {
+  width: auto;
+}

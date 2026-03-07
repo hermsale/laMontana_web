@@ -1,0 +1,69 @@
+/* 
+.header-actions{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-direction: column-reverse;
+} */
+
+/* .hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 12px;
+  cursor: pointer;
+} */
+
+/* .hamburger {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 8px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 12px;
+  transition: background .2s ease, box-shadow .2s ease, transform .06s ease;
+} */
+.hamburger:hover {
+  background: rgba(255, 255, 255, .10);
+}
+.hamburger:active {
+  transform: scale(.98);
+}
+.hamburger:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.hamburger {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 8px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.06s ease;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+.hamburger:active {
+  transform: scale(0.96);
+}

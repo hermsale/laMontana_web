@@ -1,0 +1,17 @@
+{
+  "name": "la-montana-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "server",
+    "vite-project"
+  ],
+  "scripts": {
+    "dev": "concurrently \"cd server && npm run dev\" \"cd vite-project && npm run dev\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:front": "cd vite-project && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
