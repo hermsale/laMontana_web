@@ -12,11 +12,7 @@ dist-ssr
 vite-project/dist
 
 # Entornos y claves
-.env
-server/.env
-*.env
-*.env.*
-server/.env
+
 server/.env.*
 
 # Editor/OS
@@ -28,7 +24,7 @@ server/.env.*
 # Archivos sueltos
 plataformas de desarrollo 2.pdf
 
-.env
+
 firebase-service-account.json
-server/.env
+
 server/config/firebase-service-account.json
